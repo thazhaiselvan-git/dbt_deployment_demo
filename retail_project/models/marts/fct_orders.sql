@@ -15,7 +15,9 @@ select
     o.total_price,
     i.line_count,
     i.total_quantity,
-    i.net_revenue
+    i.net_revenue,
+	123 as Test_default_Value,
+	'Demo' as Char_default_value
 from {{ ref('stg_orders') }} o
 left join {{ ref('int_order_items') }} i
     on o.order_key = i.order_key
